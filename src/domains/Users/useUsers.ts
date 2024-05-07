@@ -1,5 +1,4 @@
 import { useUserApi } from "@/api/hooks/useUserApi";
-import useOnMount from "@/common/hooks/useOnMount/useOnMount";
 import { globalEnv } from "@/globalEnv";
 import { TablePaginationConfig } from "antd";
 import { useCallback, useEffect, useState } from "react";
@@ -7,54 +6,53 @@ import { useCallback, useEffect, useState } from "react";
 export const useUsers = () => {
   const { isLoading, fetchUsers, data: users } = useUserApi();
 
-  const [queryValues, setQueryValues] = useState({current: 1, pageSize: 15, search: ''});
+  const [queryValues, setQueryValues] = useState({
+    current: 1,
+    pageSize: 10,
+    search: "",
+  });
 
-  
-
-  useOnMount(() => {
+  useEffect(() => {
     const fetchData = async () => {
-      await fetchUsers(1, 15, '');
+      await fetchUsers(
+        queryValues.current,
+        queryValues.pageSize,
+        queryValues.search
+      );
     };
 
     fetchData();
-  });
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     await fetchUsers(queryValues.current, queryValues.pageSize);
-  //   };
-
-  //   fetchData();
-  // }, [
-  //   queryValues
-  // ])
+  }, [queryValues]);
 
   const onTableChange = useCallback(
     async (pagination: TablePaginationConfig) => {
       if (pagination.current && pagination.pageSize) {
-        fetchUsers(pagination.current, pagination.pageSize, '');
+        setQueryValues({
+          search: "",
+          current: pagination.current,
+          pageSize: pagination.pageSize,
+        });
       }
     },
     []
   );
 
-  const onSearchQuery = useCallback(
-    async (searchValue: string) => {
-
-      if (searchValue) {
-        fetchUsers(queryValues.current, queryValues.pageSize, searchValue);
-      }
-    },
-    []
-  );
-
+  const onSearchQuery = useCallback(async (searchValue: string) => {
+    setQueryValues({
+      ...queryValues,
+      search: searchValue,
+      current: 1,
+    });
+  }, []);
 
   return {
     users,
     isLoading,
     onTableChange,
     onSearchQuery,
-    totalUserCount: globalEnv.TOTAL_RECORD_COUNT,
-
+    totalUserCount: !!queryValues.search
+      ? users?.length
+      : globalEnv.TOTAL_RECORD_COUNT,
+    queryValues,
   };
 };

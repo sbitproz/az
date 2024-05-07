@@ -1,8 +1,5 @@
 export interface ApiResults<T> {
-  data: {
-    results: T[];
-    info: Meta;
-  };
+  data: T[];
 }
 
 export interface Meta {

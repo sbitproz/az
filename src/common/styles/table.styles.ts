@@ -3,9 +3,6 @@ import { css } from "@emotion/react";
 
 export const tableStyles = css`
   cursor: default;
-  margin-left: 50px;
-  margin-right: 50px;
-  /* width: 100%; */
   height: 100%;
 
   .ant-table-thead tr > th.ant-table-cell {
@@ -29,12 +26,4 @@ export const tableStyles = css`
       fill: ${colors.black100};
     }
   }
-
-  /* tr.ant-table-row.ant-table-row-level-0:nth-of-type(2n) td {
-    background-color: ${colors.primary190};
-  }
-
-  tr.ant-table-row.ant-table-row-level-0 {
-    background-color: ${colors.white100};
-  } */
 `;

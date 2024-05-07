@@ -11,6 +11,8 @@ import { dateFormat } from "@/common/utils/dateFormat.utils";
 import { IconWrapper, RowWrapper } from "./Users.styles";
 import { LightText, BoldText } from "@/common/components/Typography/Typography";
 
+export const pageSizeOptions = ["10", "25", "50"];
+
 export const userColumns: ColumnsType<User> = [
   {
     title: "User",

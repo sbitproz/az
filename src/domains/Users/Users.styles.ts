@@ -13,8 +13,7 @@ export const IconWrapper = styled(Flex)`
 `;
 
 export const Header = styled(HeaderBase)`
-height: 80px;
-padding-top: 20px;
-  margin-bottom: 50px;
+  height: 80px;
+  padding-top: 20px;
   background: ${colors.white100};
 `;
