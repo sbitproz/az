@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "jsxImportSource": "@emotion/react",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* alias */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*", "./dist/*", ""],
+      "@common/*": ["./src/common/*"],
+      "@domains/*": ["./src/domains/*"],
+      "@store/*": ["./src/store/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@utils/*": ["./src/common/utils/*"],
+      "@styles/*": ["./src/common/styles/*"],
+      "@hooks/*": ["./src/common/hooks/*"],
+      "@components/*": ["./src/common/components/*"]
+    }
+  },
+  "include": ["src", "emotion.d.ts","vitest.setup.ts", "auto-imports.d.ts",],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

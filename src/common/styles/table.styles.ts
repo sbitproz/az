@@ -1,0 +1,40 @@
+import { colors } from "@/styles/colors";
+import { css } from "@emotion/react";
+
+export const tableStyles = css`
+  cursor: default;
+  margin-left: 50px;
+  margin-right: 50px;
+  /* width: 100%; */
+  height: 100%;
+
+  .ant-table-thead tr > th.ant-table-cell {
+    background-color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 12px;
+    color: ${colors.grey120};
+    padding: 13px 8px;
+    border-bottom: 1px solid ${colors.grey180};
+  }
+
+  .ant-table-tbody tr > td.ant-table-cell {
+    font-weight: 400;
+    font-size: 12px;
+    color: ${colors.black100};
+    padding: 13px 15px;
+    border-right: 1px solid ${colors.grey185};
+
+    .anticon svg {
+      fill: ${colors.black100};
+    }
+  }
+
+  /* tr.ant-table-row.ant-table-row-level-0:nth-of-type(2n) td {
+    background-color: ${colors.primary190};
+  }
+
+  tr.ant-table-row.ant-table-row-level-0 {
+    background-color: ${colors.white100};
+  } */
+`;
