@@ -4,6 +4,7 @@ import {
   ShowNotification,
   useToastNotification,
 } from "@/common/hooks/useToastNotification/useToastNotification";
+import { useState } from "react";
 
 const handleSuccessResponse = (response: any) => {
   return response;
@@ -17,8 +18,6 @@ const ERRORS = {
 
 const handleErrorResponse =
   (errorToast: (showNotification: ShowNotification) => any) => (error: any) => {
-    console.error(error);
-
     if (!error?.response) {
       errorToast({ message: ERRORS.ERROR_NETWORK, description: 'Unable to connect to the server' });
     }
@@ -29,7 +28,7 @@ const handleErrorResponse =
           errorToast({ message: ERRORS.ACTION_UNAUTHORIZED });
           break;
         case 404:
-          errorToast({ message: ERRORS.ACTION_NOT_FOUND });
+          errorToast({ message: ERRORS.ACTION_NOT_FOUND, 'description': 'API route not found' });
           break;
         default:
           errorToast({
@@ -44,11 +43,16 @@ const handleErrorResponse =
 
 export const useApiInterceptor = () => {
   const { showErrorToastNotification } = useToastNotification();
+  const [ready, setReady] = useState(false);
+
 
   useOnMount(() => {
     api.interceptors.response.use(
       handleSuccessResponse,
       handleErrorResponse(showErrorToastNotification)
     );
+    setReady(true)
   });
+
+  return { ready }
 };

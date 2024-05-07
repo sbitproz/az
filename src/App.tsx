@@ -1,16 +1,12 @@
 import { Users } from "./domains/Users/Users";
-import "./App.css";
 import { useApiInterceptor } from "./api/hooks/useApiInterceptor";
 import { Layout } from "@/domains/Layout/Layout";
+import "./App.css";
 
 function App() {
-  useApiInterceptor();
+  const { ready } = useApiInterceptor();
 
-  return (
-    <Layout>
-      <Users />
-    </Layout>
-  );
+  return <Layout>{ready && <Users />}</Layout>;
 }
 
 export default App;
