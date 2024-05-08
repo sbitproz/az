@@ -28,15 +28,25 @@ Additional Bonus Points:
 
 ## Install
 
-To install the dependencies need to run this app enter the following command
+Install the project dependencies
 
 ```
 yarn
 ```
 
+## Create an .env file
+
+Create an .env file in the root of the project.  Copy the contents from .env.defaults into the .env file or use the below configurations
+
+```
+VITE_BASEURL=http://localhost:3000/results
+VITE_TOTAL_RECORD_COUNT=200
+NOTIFICATION_DURATION=10
+```
+
 ## Start the React app
 
-To start the app enter the following command
+Start the React app
 
 ```
 yarn dev
@@ -61,4 +71,4 @@ yarn server
 
 ## View the App
 
-Providing both vite and json-server has started successfully, go to your favourite browser and open the following URL: http://localhost:5173/
+Providing both vite and json-server have started successfully, go to your favourite browser and open the following URL: http://localhost:5173/
