@@ -12,9 +12,9 @@ export const BoldText = styled.div`
   font-weight: 700;
 `;
 
-
 export const Title = styled(TitleBase)`
-  font-size: 28px;
-  line-height: 1.5;
+  && {
+    font-size: 28px;
+    line-height: 1.5;
+  }
 `;
-
