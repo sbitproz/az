@@ -8,29 +8,29 @@ Naturally there's room for improvement all round :). This project isn't complete
 
 ## Requirements:
 
-• Use React with functional components and hooks: DONE
-• Use Typescript for type annotations and improved code structure: DONE
-• fetches a list of users from an API (e.g., https://randomuser.me/) and displays them in a user-friendly format: DONE
-• Style the user list with rich CSS, potentially using a styling library like Styled Components: DONE
-• Use router for page navigation: DONE
-• The application should display:
-  o A loading indicator while data is being fetched: DONE
-  o User details if logged in to the app: DONE
+- Use React with functional components and hooks: DONE
+- Use Typescript for type annotations and improved code structure: DONE
+- fetches a list of users from an API (e.g., https://randomuser.me/) and displays them in a user-friendly format: DONE
+- Style the user list with rich CSS, potentially using a styling library like Styled Components: DONE
+- Use router for page navigation: DONE
+- The application should display:
+  - A loading indicator while data is being fetched: DONE
+  - User details if logged in to the app: DONE
 
-Bonus Points:
-• Integrate unit tests for critical components using a testing framework like Jest: DONE (testing the domain feature only)
+### Bonus Points:
+- Integrate unit tests for critical components using a testing framework like Jest: DONE (testing the domain feature only)
 
 
-Additional Bonus Points:
-• Pagination
-• Search Filter
-• Error Boundaries
-• Basic caching layer for API
-• API Interceptor error catcher
-• API standard hook data / meta hook
-• Debounce integrated
-• Alias configurations
-• Separation of concerns
+### Additional Bonus Points:
+- Pagination
+- Search Filter
+- Error Boundaries
+- Basic caching layer for API
+- API Interceptor error catcher
+- API standard hook data / meta hook
+- Debounce integrated
+- Alias configurations
+- Separation of concerns
 
 # Starting up project
 
