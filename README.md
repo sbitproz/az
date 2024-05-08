@@ -1,3 +1,7 @@
+# Introduction
+
+This is a project 
+
 # Requirements:
 
 • Use React with functional components and hooks: DONE
@@ -72,3 +76,26 @@ yarn server
 ## View the App
 
 Providing both vite and json-server have started successfully, go to your favourite browser and open the following URL: http://localhost:5173/
+
+# Folder Architecture
+
+This is a small project but still has enough components to utilise a domain folder structure. By abstracting out reuseable components, I have focused on 2 key component domains common and Users. The folder structure will be similar to the following:
+
+components
+|  +-- Users
+|     +-- components
+|         +-- UserSearch
+|             +-- UserSearch.tsx
+|             +-- UserSearch.styles.ts
+|             +-- useUserSearch.ts
+|     +-- Users.tsx
+|     +-- useUsers.ts
+|     +-- Users.utils.ts
+|     +-- Users.styles.ts
+|  +-- common (project reusable zone)
+|     +-- components
+|     +-- hooks
+|     +-- styles
+|     +-- utils
++-- styles
+App.tsx
