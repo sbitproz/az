@@ -1,5 +1,4 @@
-import { Search } from "@components/Search/Search.styles";
-import { SearchWrapper } from "./UserSearch.styles";
+import { Search, SearchWrapper } from "./UserSearch.styles";
 import { useUserSearch } from "./useUserSearch";
 import { Button } from "@/common/components/Button/Button.styles";
 
@@ -13,12 +12,13 @@ export const UserSearch = ({ onSearchQuery }: UserSearchProps) => {
   return (
     <SearchWrapper>
       <Search
-      placeholder="Search by last name"
+        placeholder="Search by last name"
         value={searchValue}
-        style={{ maxWidth: 300 }}
         onChange={(e) => onSearch(e.target.value)}
       />
-      <Button style={{marginLeft: 10}} onClick={onClear}>Clear</Button>
+      <Button onClick={onClear}>
+        Clear
+      </Button>
     </SearchWrapper>
   );
 };

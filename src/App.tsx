@@ -1,12 +1,17 @@
-import { Users } from "./domains/Users/Users";
 import { useApiInterceptor } from "./api/hooks/useApiInterceptor";
-import { Layout } from "@/domains/Layout/Layout";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router";
 import "./App.css";
 
 function App() {
   const { ready } = useApiInterceptor();
 
-  return <Layout>{ready && <Users />}</Layout>;
+  if (!ready) {
+    return null
+  }
+
+  return <RouterProvider router={router} />;
+
 }
 
 export default App;

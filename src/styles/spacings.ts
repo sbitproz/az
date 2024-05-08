@@ -1,4 +1,4 @@
-export const spacing = {
+export const spacings = {
   S1: 2,
   S2: 4,
   S3: 6,

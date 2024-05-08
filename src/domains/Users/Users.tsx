@@ -5,8 +5,12 @@ import { pageSizeOptions, userColumns } from "./Users.constants";
 import { getRowKey } from "./Users.util";
 import { tableStyles } from "@/common/styles/table.styles";
 import { UserSearch } from "./components/UserSearch/UserSearch";
-import { Header } from "./Users.styles";
-import { Content } from "antd/es/layout/layout";
+import { Content, Header } from "./Users.styles";
+import { ErrorBoundary } from "@components/ErrorBoundary/ErrorBoundary";
+import { somethingWentWrong } from "@components/ErrorBoundary/ErrorBoundary.utils";
+import { Title } from "@/common/components/Typography/Typography";
+
+const userErrorLabel = somethingWentWrong("the user table");
 
 export const Users = () => {
   const {
@@ -21,23 +25,26 @@ export const Users = () => {
   return (
     <>
       <Header>
+        <Title>Users</Title>
         <UserSearch onSearchQuery={onSearchQuery} />
       </Header>
-      <Content style={{ overflowY: "auto", padding: 50 }}>
-        <Table<User>
-          css={tableStyles}
-          columns={userColumns}
-          dataSource={users}
-          rowKey={getRowKey}
-          onChange={onTableChange}
-          loading={isLoading}
-          pagination={{
-            total: totalUserCount,
-            pageSizeOptions,
-            pageSize: queryValues.pageSize,
-            current: queryValues.current,
-          }}
-        />
+      <Content>
+        <ErrorBoundary label={userErrorLabel}>
+          <Table<User>
+            css={tableStyles}
+            columns={userColumns}
+            dataSource={users}
+            rowKey={getRowKey}
+            onChange={onTableChange}
+            loading={isLoading}
+            pagination={{
+              total: totalUserCount,
+              pageSizeOptions,
+              pageSize: queryValues.pageSize,
+              current: queryValues.current,
+            }}
+          />
+        </ErrorBoundary>
       </Content>
     </>
   );

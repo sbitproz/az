@@ -1,11 +1,11 @@
-import { PropsWithChildren } from "react";
 import { BaseLayout } from "./Layout.styles";
+import { Outlet } from "react-router-dom";
 
-export const Layout = ({ children }: PropsWithChildren) => {
+export const Layout = () => {
   return (
     <BaseLayout>
       <BaseLayout>
-        {children}
+        <Outlet />
       </BaseLayout>
     </BaseLayout>
   );

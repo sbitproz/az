@@ -1,7 +1,7 @@
 import { ColumnsType } from "antd/es/table";
 import { Dob, Location, User } from "../../api/hooks/users.types";
 import { Avatar, Flex } from "antd";
-import { spacing } from "@/styles/spacings";
+import { spacings } from "@/styles/spacings";
 import {
   CalendarOutlined,
   EnvironmentOutlined,
@@ -75,7 +75,7 @@ export const userColumns: ColumnsType<User> = [
             <CalendarOutlined />
           </IconWrapper>
           <div>
-            <span style={{ marginRight: spacing.S4 }}>{dateFormat(date)}</span>
+            <span style={{ marginRight: spacings.S4 }}>{dateFormat(date)}</span>
             <LightText>(Age {age})</LightText>
           </div>
         </RowWrapper>
@@ -124,7 +124,7 @@ export const userColumns: ColumnsType<User> = [
             <CalendarOutlined />
           </IconWrapper>
           <div>
-            <span style={{ marginRight: spacing.S4 }}>{dateFormat(date)}</span>
+            <span style={{ marginRight: spacings.S4 }}>{dateFormat(date)}</span>
             <LightText>({age} years ago)</LightText>
           </div>
         </RowWrapper>
