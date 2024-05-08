@@ -84,7 +84,7 @@ Providing both vite and json-server have started successfully, go to your favour
 # Folder Architecture
 
 This is a small project but still has enough components to utilise a domain folder structure. By abstracting out reuseable components, I have focused on 2 key component domains common and Users. The folder structure will be similar to the following:
-
+```
 components
 |  +-- Users
 |     +-- components
@@ -103,3 +103,4 @@ components
 |     +-- utils
 +-- styles
 App.tsx
+```
