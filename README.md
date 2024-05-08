@@ -1,8 +1,12 @@
 # Introduction
 
-This is a project 
+Hi :)
 
-# Requirements:
+This project has been designed to pull information from JSON-Server. This react project utilises AntD UI for the 'UI' and axios for consuming APIs. The project attempts at delivering reasonably comprehensive test coverage in the feature domain area.
+
+Naturally there's room for improvement all round :). This project isn't complete :(
+
+## Requirements:
 
 • Use React with functional components and hooks: DONE
 • Use Typescript for type annotations and improved code structure: DONE
