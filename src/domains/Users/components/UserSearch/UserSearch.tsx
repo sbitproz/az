@@ -14,6 +14,7 @@ export const UserSearch = ({ onSearchQuery }: UserSearchProps) => {
       <Search
         placeholder="Search by last name"
         value={searchValue}
+        role="search"
         onChange={(e) => onSearch(e.target.value)}
       />
       <Button onClick={onClear}>
