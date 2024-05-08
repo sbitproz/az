@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const useOnMount = (fn: any) => {
+const useOnMount = (fn: Function) => {
   const triggered = useRef<boolean>(false);
 
   useEffect(() => {
